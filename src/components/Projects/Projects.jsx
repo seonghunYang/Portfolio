@@ -28,7 +28,7 @@ const Projects = () => {
         <div className="project-wrapper">
           <Title title="Projects" />
           {projects.map((project) => {
-            const { title, info, info2, url, repo, img, id, youtube } = project;
+            const { title, info, info2, url, repo, img, id, youtube, logical } = project;
 
             return (
               <Row key={id}>
@@ -49,6 +49,16 @@ const Projects = () => {
                         </p>
                         <p className="mb-4">{info2 || ''}</p>
                       </div>
+                      {logical && (
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cta-btn cta-btn--hero"
+                          href={logical || '#!'}
+                        >
+                          작성 논문
+                        </a>
+                      )}
 
                       {url && (
                         <a
